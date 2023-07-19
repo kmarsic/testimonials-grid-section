@@ -1,0 +1,166 @@
+@import "base/colors";
+
+@font-face {
+    font-family: 'barlow_semi_condensedregular';
+    src: url('base/fonts/barlowsemicondensed-regular-webfont.woff2') format('woff2'),
+         url('base/fonts/barlowsemicondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body  {
+    font-family: 'barlow_semi_condensedregular', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    background-color: $lightGrayishBlue;
+    height:100vh;
+    line-height: 1.2;
+}
+
+.container {
+    padding: 1rem;
+}
+
+
+
+.title-rows {
+    display:flex;
+    div {
+        display:flex;
+        flex-direction: column;
+        padding-left:1rem;
+        justify-content: center;
+        p {
+            margin:0
+        }
+    }
+}
+
+article {
+    p {
+        opacity: 0.5;
+    }
+}
+
+.title {
+    opacity: 0.5;
+}
+
+.grid-item {
+    box-shadow: 2px 0px 15px 5px rgba(0,0,0,0.25);
+    padding: 1.5rem;
+    margin: 1rem;
+    z-index: 1;
+    border-radius: 0.75rem;
+}
+
+.grid-item.first {
+    position:relative;
+    margin-top: 3rem;
+    background-color: $moderateViolet;
+    color:$white;   
+}
+
+.grid-item.second {
+    background-color: $veryDarkGrayishBlue;
+    color:$white;
+}
+
+.grid-item.third, .grid-item.fifth {
+    background-color: $white;
+}
+.grid-item.fourth {
+    background-color: $veryDarkBlackishBlue;
+    color: $white;
+}
+
+#bg-quote {
+    position:absolute;
+    right:20px;
+    z-index:-1;
+    top:20px;
+}
+
+.author-img {
+    border-radius: 2rem;
+}
+
+
+@media (min-width: 50rem) {
+
+    body {
+        display:flex;
+        align-items: center;
+    }
+    .container {
+        margin:auto;
+        display:grid;
+        grid-template-areas: 
+        'one one'
+        'two three'
+        'four three'
+        'five five';
+    }
+
+    
+
+    .grid-item:nth-child(1) {
+        grid-area: one;
+        margin-top:1rem;
+    }
+    .grid-item:nth-child(2) {
+        grid-area: two;
+    }
+    .grid-item:nth-child(3) {
+        grid-area: four;
+    }
+    .grid-item:nth-child(4) {
+        grid-area: five;
+    }
+    .grid-item:nth-child(5) {
+        grid-area: three;
+    }
+
+   
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        margin:auto;
+        width: 90rem;
+        display:grid;
+        grid-template-areas: 
+        'one one two three'
+        'four five five three'
+    }
+
+    
+
+    .grid-item:nth-child(1) {
+        grid-area: one;
+        margin-top:1rem;
+    }
+    .grid-item:nth-child(2) {
+        grid-area: two;
+    }
+    .grid-item:nth-child(3) {
+        grid-area: four;
+    }
+    .grid-item:nth-child(4) {
+        grid-area: five;
+    }
+    .grid-item:nth-child(5) {
+        grid-area: three;
+    }
+
+}
+
